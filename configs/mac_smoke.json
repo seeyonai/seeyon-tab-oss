@@ -1,0 +1,30 @@
+{
+  "name": "mac_smoke",
+  "backend": "mlx",
+  "device": "gpu",
+  "model": {
+    "width": 64,
+    "heads": 4,
+    "row_layers": 1,
+    "icl_layers": 2,
+    "ff_multiplier": 2,
+    "max_features": 128,
+    "category_vocab": 66
+  },
+  "episode": {
+    "support": 32,
+    "query": 16,
+    "features": 16
+  },
+  "training": {
+    "steps": 20,
+    "accumulation": 1,
+    "warmup_steps": 2
+  },
+  "runtime": {
+    "max_seconds": 600,
+    "save_every": 10,
+    "log_every": 5
+  }
+}
+

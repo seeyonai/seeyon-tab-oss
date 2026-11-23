@@ -1,0 +1,37 @@
+{
+  "name": "mac_pilot",
+  "backend": "mlx",
+  "device": "gpu",
+  "model": {
+    "width": 128,
+    "heads": 4,
+    "row_layers": 1,
+    "icl_layers": 4,
+    "ff_multiplier": 2,
+    "max_features": 128,
+    "category_vocab": 66
+  },
+  "episode": {
+    "support": 128,
+    "query": 32,
+    "features": 16
+  },
+  "training": {
+    "steps": 2000,
+    "accumulation": 4,
+    "warmup_steps": 40
+  },
+  "runtime": {
+    "max_seconds": 1800,
+    "save_every": 100,
+    "log_every": 10,
+    "eval_every": 200
+  },
+  "data": {
+    "families": [
+      "linear",
+      "additive",
+      "interactions"
+    ]
+  }
+}

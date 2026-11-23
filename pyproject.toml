@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seeyon-tab"
+version = "0.2.0"
+description = "Train a tabular in-context predictor from synthetic episodes with MLX or PyTorch"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.11"
+dependencies = ["numpy==2.3.5"]
+
+[project.optional-dependencies]
+mlx = ["mlx==0.32.4"]
+mlx-cpu = ["mlx[cpu]==0.32.4"]
+torch = ["torch>=2.7,<3"]
+
+[project.scripts]
+seeyon-tab = "seeyon_tab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
